@@ -1,0 +1,35 @@
+{
+    "name": "zephyr-asdl",
+    "displayName": "Zephyr ASDL",
+    "publisher": "brettcannon",
+    "description": "Language support for the Zephyr Abstract Syntax Description Language",
+    "version": "2020.3.0",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "author": {
+        "name": "Brett Cannon",
+        "url": "https://snarky.ca"
+    },
+    "homepage": "https://github.com/brettcannon/vscode-zephyr-asdl",
+        "bugs": {
+                "url": "https://github.com/brettcannon/vscode-zephyr-asdl/issues"
+        },
+        "repository": "https://github.com/brettcannon/vscode-zephyr-asdl.git",
+    "contributes": {
+        "languages": [{
+            "id": "asdl",
+            "aliases": ["Zephyr ASDL", "Zephyr", "ASDL"],
+            "extensions": [".asdl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "asdl",
+            "scopeName": "source.asdl",
+            "path": "./syntaxes/asdl.tmLanguage.json"
+        }]
+    }
+}

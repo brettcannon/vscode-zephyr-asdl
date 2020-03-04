@@ -1,0 +1,106 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Zephyr ASDL",
+	"patterns": [
+		{
+			"include": "#syntax"
+		},
+		{
+			"include": "#top-level"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#constructors"
+		},
+		{
+			"name": "comment.line.double-dash.asdl",
+			"match": "--.*$"
+		}
+	],
+	"repository": {
+		"syntax": {
+			"patterns": [
+				{
+					"name": "constant.language.asdl",
+					"match": "\\b(identifier|int|string|bytes|object|singleton|constant)\\b"
+				},
+				{
+					"name": "keyword.operator.or.asdl",
+					"match": "\\|"
+				}
+			]
+		},
+		"top-level": {
+			"patterns": [
+				{
+					"name": "meta.module.asdl",
+					"match": "^\\s*(module)\\s+(\\w+)$",
+					"captures": {
+						"1": {
+							"name": "storage.type.module.asdl"
+						},
+						"2": {
+							"name": "entity.name.module.asdl"
+						}
+					}
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "meta.type.asdl",
+					"match": "^\\s*(\\w+)\\s*(=)",
+					"captures": {
+						"1": {
+							"name": "entity.name.class.asdl"
+						},
+						"2": {
+							"name": "keyword.operator.assignment.asdl"
+						}
+					}
+				},
+				{
+					"name": "keyword.other.asdl",
+					"match": "\\battributes\\b"
+				}
+			]
+		},
+		"constructors": {
+			"patterns": [
+				{
+					"name": "entity.name.function.asdl",
+					"match": "\\b[A-Z]\\w+"
+				},
+				{
+					"name": "meta.parameters.asdl",
+					"begin": "\\(",
+					"end": "\\)",
+					"patterns": [
+						{
+							"name": "meta.parameter.asdl",
+							"match": "(\\w+)(\\*|\\?)?\\s+(\\w+)",
+							"captures": {
+								"1": {
+									"name": "storage.type.parameter.asdl"
+								},
+								"2": {
+									"name": "keyword.operator.modifier.asdl"
+								},
+								"3": {
+									"name": "variable.parameter.function.asdl"
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	"scopeName": "source.asdl",
+	"fileTypes": [
+		"asdl"
+	]
+}
