@@ -3,7 +3,12 @@
     "displayName": "Zephyr ASDL",
     "publisher": "brettcannon",
     "description": "Language support for the Zephyr Abstract Syntax Description Language",
-    "version": "2020.3.0",
+    "version": "2021.5.0",
+    "capabilities": {
+        "untrustedWorkspaces": {
+          "supported": true
+        }
+      },
     "engines": {
         "vscode": "^1.42.0"
     },
