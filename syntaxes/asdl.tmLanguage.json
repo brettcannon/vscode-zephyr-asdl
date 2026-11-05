@@ -81,7 +81,7 @@
 					"patterns": [
 						{
 							"name": "meta.parameter.asdl",
-							"match": "(\\w+)(\\*|\\?)?\\s+(\\w+)",
+							"match": "(\\w+)(\\??\\*|\\?)?\\s+(\\w+)",
 							"captures": {
 								"1": {
 									"name": "storage.type.parameter.asdl"
